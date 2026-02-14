@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Bharat Darpan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <div>
+        <h1 class="logo">🛠️ Bharat Darpan Admin</h1>
+        <p class="tagline">Content Management Panel</p>
+      </div>
+      <a class="btn" href="index.html">View Site</a>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <h2>नई खबर जोड़ें</h2>
+      <form id="news-form">
+        <div class="form-row"><label>Title</label><input required name="title" /></div>
+        <div class="form-row"><label>Summary</label><textarea required name="summary"></textarea></div>
+        <div class="form-row"><label>Category</label>
+          <select name="category">
+            <option value="national">राष्ट्रीय</option>
+            <option value="world">अंतरराष्ट्रीय</option>
+            <option value="sports">खेल</option>
+            <option value="entertainment">मनोरंजन</option>
+            <option value="tech">टेक</option>
+            <option value="jobs">Jobs</option>
+            <option value="religion">धर्म</option>
+          </select>
+        </div>
+        <div class="form-row"><label>Author</label><input name="author" placeholder="Admin" /></div>
+        <div class="form-row"><label>Date</label><input type="date" name="createdAt" /></div>
+        <button class="btn" type="submit">Publish</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Published News</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Title</th><th>Category</th><th>Author</th><th>Action</th></tr></thead>
+          <tbody id="admin-table"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>For production: connect this panel with backend APIs + login auth.</footer>
+  <script src="app.js"></script>
+  <script>initAdminPage();</script>
+</body>
+</html>
